@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %}Index{% endblock %}
+{% block head %}
+  {{ super() }}
+{% endblock %}
+{% block content %}
+  <h1>Hidden Page</h1>
+  <p>This website is used as an example on how to use Burp's Custom Iterator.</p>
+  <h2>Scenario</h2>
+  <p>Imagine you are testing a website for a department store, and you want to evaluate if there are any IDOR issues. The problem is that the format for the invoices are not a simple number. The example you have looks like <code>20211105|22|03</code>.</p>
+  <p>Through your investigations you have figured out:
+  <ul>
+    <li>First part is the date: <code>YYYYMMDD</code></li>
+    <li>You don't know the second part, but you have noticed that it has never been larger than 29</li>
+    <li>Third part is the zero-padded store number: <code>03</code></li>
+    <li>The total number of stores is 8 and the first store number is <code>01</code></li>
+  </ul>
+  <p>Link to <a href="/20211105|22|03">Example Invoice</a></p>
+  <h2>Challenge</h2>
+  </p>Based on this information, you want to find all invoices for sales done this year. Once you hit the right combination a response will be shown.</p>
+{% endblock %}

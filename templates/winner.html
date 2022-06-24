@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}You Found It!{% endblock %}
+{% block head %}
+  {{ super() }}
+  <style type="text/css">
+    .important { color: red; }
+  </style>
+{% endblock %}
+{% block content %}
+  <h1>You Found It!</h1>
+  <p class="important">
+  Winner! Winner! Chicken dinner!
+  </p>
+  <p class="important">
+  You found invoice 20220426|23|02
+  </p>
+{% endblock %}
